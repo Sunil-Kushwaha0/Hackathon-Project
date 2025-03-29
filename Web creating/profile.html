@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>User Profile - Family Trip</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: white;
+    }
+
+    .profile-container {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 40px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      width: 80%;
+      max-width: 400px;
+    }
+
+    .profile-container h1 {
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+
+    .profile-info {
+      text-align: left;
+      margin: 20px 0;
+    }
+
+    .profile-info p {
+      margin: 10px 0;
+      font-size: 16px;
+    }
+
+    .profile-info span {
+      font-weight: bold;
+    }
+
+    .btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .home-btn {
+      background-color: #28a745;
+    }
+
+    .logout-btn {
+      background-color: #dc3545;
+      margin-left: 10px;
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+    }
+
+    .not-logged-in {
+      text-align: center;
+    }
+
+    .login-link {
+      color: #17a2b8;
+      text-decoration: none;
+    }
+
+    .login-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="profile-container" id="profileContainer">
+    <h1>User Profile</h1>
+    
+    <div id="profileContent">
+      <!-- Content will be loaded dynamically -->
+    </div>
+  </div>
+
+  <!-- Include the user.js file -->
+  <script src="js/user.js"></script>
+  
+  <script>
+    // Check if user is logged in
+    document.addEventListener('DOMContentLoaded', function() {
+      const profileContent = document.getElementById('profileContent');
+      
+      if (isUserLoggedIn()) {
+        // Get user data from localStorage
+        const user = getUserFromLocalStorage();
+        
+        // Create profile HTML
+        let html = `
+          <div class="profile-info">
+            <p><span>Name:</span> ${user.fullname}</p>
+            <p><span>Email:</span> ${user.email}</p>
+            <p><span>Registered on:</span> ${new Date(user.registrationDate).toLocaleDateString()}</p>
+          </div>
+          <div>
+            <button class="btn home-btn" onclick="goHome()">Home</button>
+            <button class="btn logout-btn" onclick="logoutAndRedirect()">Logout</button>
+          </div>
+        `;
+        
+        profileContent.innerHTML = html;
+      } else {
+        // User is not logged in
+        let html = `
+          <div class="not-logged-in">
+            <p>You are not logged in.</p>
+            <p>Please <a href="join.html" class="login-link">login or register</a> to view your profile.</p>
+            <button class="btn home-btn" onclick="goHome()">Go to Home Page</button>
+          </div>
+        `;
+        
+        profileContent.innerHTML = html;
+      }
+    });
+    
+    function goHome() {
+      window.location.href = "hom.html"; // or your home page
+    }
+    
+    function logoutAndRedirect() {
+      logoutUser();
+      window.location.href = "join.html";
+    }
+  </script>
+
+</body>
+</html>

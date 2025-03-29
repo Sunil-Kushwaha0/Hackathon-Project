@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Family Trip</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(to right, #f5d0f1, #abbad0);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      font-family: 'Arial', sans-serif;
+    }
+
+    .container {
+      text-align: center;
+      color: #dd55bd;
+      animation: fadeIn 2s ease-in;
+    }
+
+    h1 {
+      font-size: 60px;
+      font-family: 'Rage', cursive; /* Make sure Rage font is loaded or installed */
+      margin-bottom: 20px;
+    }
+
+    .plane {
+      width: 100px;
+      position: absolute;
+      top: 50%;
+      left: -150px;
+      transform: translateY(-50%);
+      animation: flyPlane 4s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.8); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes flyPlane {
+      0% { left: -150px; }
+      50% { left: 50%; }
+      100% { left: 110%; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Make sure family.png is in the same folder as this HTML file -->
+  <img src="family.png" alt="Plane" class="plane" />
+  
+  <div class="container">
+    <h1>Family Trip</h1>
+    <p>Making Memories Together</p>
+  </div>
+
+  <script>
+    // Redirect to new page after 4 seconds
+    setTimeout(function() {
+      window.location.href = "adpage.html"; // Replace with your actual homepage URL
+    }, 4000);
+  </script>
+
+</body>
+</html>

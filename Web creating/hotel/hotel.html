@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FamilyTrip | Book Your Dream Vacation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="hotel.css">
+</head>
+<body>
+    <div class="preloader">
+        <div class="loader">
+            <div class="loader-inner"></div>
+            <div class="loader-inner"></div>
+            <div class="loader-inner"></div>
+        </div>
+    </div>
+
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">
+                <span>Family</span>Trip
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#destinations">Destinations</a></li>
+                <li><a href="#rooms">Rooms</a></li>
+                <li><a href="#amenities">Amenities</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1 class="hero-title">Discover Your Perfect Escape</h1>
+            <p class="hero-subtitle">Luxury accommodations in the world's most beautiful destinations</p>
+            <a href="#booking" class="btn btn-primary scroll-to-booking">Book Now</a>
+        </div>
+        <div class="hero-slider">
+            <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');"></div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');"></div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1582719471385-c1c06ad8e642?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');"></div>
+        </div>
+        <div class="slider-controls">
+            <button class="slider-prev"><i class="fas fa-chevron-left"></i></button>
+            <button class="slider-next"><i class="fas fa-chevron-right"></i></button>
+        </div>
+    </section>
+
+    <section class="booking-form" id="booking">
+        <div class="container">
+            <h2 class="section-title">Find Your Perfect Stay</h2>
+            <form id="bookingForm">
+                <div class="form-group">
+                   <label for="destination">Destination</label>
+                   <input type="text" id="from" placeholder="Departure city" required>
+
+                    <!-- <select id="destination" name="destination" required>
+
+                         <option value="">Select Destination</option>
+                        <option value="paris">Paris, France</option>
+                        <option value="bali">Bali, Indonesia</option>
+                        <option value="maldives">Maldives</option>
+                        <option value="santorini">Santorini, Greece</option>
+                        <option value="tokyo">Tokyo, Japan</option> 
+                    </select>  -->
+                </div>
+                <div class="form-group">
+                    <label for="checkin">Check-in</label>
+                    <input type="date" id="checkin" name="checkin" required>
+                </div>
+                <div class="form-group">
+                    <label for="checkout">Check-out</label>
+                    <input type="date" id="checkout" name="checkout" required>
+                </div>
+                <div class="form-group">
+                    <label for="guests">Guests</label>
+                    <select id="guests" name="guests" required>
+                        <option value="1">1 Guest</option>
+                        <option value="2" selected>2 Guests</option>
+                        <option value="3">3 Guests</option>
+                        <option value="4">4 Guests</option>
+                        <option value="5+">5+ Guests</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Search Availability</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="destinations" id="destinations">
+        <div class="container">
+            <h2 class="section-title">Popular Destinations</h2>
+            <p class="section-subtitle">Explore our most sought-after locations</p>
+            <div class="destination-grid">
+                <div class="destination-card">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1431274172761-fca41d930114?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');">
+                        <div class="card-overlay">
+                            <h3>Mumbai, India</h3>
+                            <p>The city of love and lights</p>
+                            <a href="#" class="btn btn-outline">Explore</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1580968668595-57ce9c12e1d2?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Y2hlbm5haXxlbnwwfHwwfHx8MA%3D%3D');">
+                        <div class="card-overlay">
+                            <h3>Chennai, India</h3>
+                            <p>Tropical paradise</p>
+                            <a href="#" class="btn btn-outline">Explore</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="destination-card">
+                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1573843981267-be1999ff37cd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80');">
+                        <div class="card-overlay">
+                            <h3>Goa, Indonesia</h3>
+                            <p>Whitewashed beauty</p>
+                            <a href="#" class="btn btn-outline">Explore</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="rooms" id="rooms">
+        <div class="container">
+            <h2 class="section-title">Our Rooms & Suites</h2>
+            <p class="section-subtitle">Luxury accommodations for every need</p>
+            <div class="room-carousel">
+                <div class="room-card">
+                    <div class="room-image" style="background-image: url('https://images.unsplash.com/photo-1618773928121-c32242e63f39?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');"></div>
+                    <div class="room-details">
+                        <h3>Deluxe Room</h3>
+                        <p class="room-description">Spacious room with king bed and city view</p>
+                        <div class="room-features">
+                            <span><i class="fas fa-bed"></i> 1 King Bed</span>
+                            <span><i class="fas fa-users"></i> 2 Guests</span>
+                            <span><i class="fas fa-ruler-combined"></i> 45 m²</span>
+                        </div>
+                        <div class="room-price">
+                            <span class="price">Rs 2000</span>
+                            <span class="per-night">/ night</span>
+                            <a href="#booking" class="btn btn-primary scroll-to-booking">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="room-card">
+                    <div class="room-image" style="background-image: url('https://plus.unsplash.com/premium_photo-1676823553207-758c7a66e9bb?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cm9vbXxlbnwwfHwwfHx8MA%3D%3D');"></div>
+                    <div class="room-details">
+                        <h3>Executive Suite</h3>
+                        <p class="room-description">Luxury suite with separate living area</p>
+                        <div class="room-features">
+                            <span><i class="fas fa-bed"></i> 1 King Bed</span>
+                            <span><i class="fas fa-users"></i> 2 Guests</span>
+                            <span><i class="fas fa-ruler-combined"></i> 65 m²</span>
+                        </div>
+                        <div class="room-price">
+                            <span class="price">Rs 2500</span>
+                            <span class="per-night">/ night</span>
+                            <a href="#booking" class="btn btn-primary scroll-to-booking">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="room-card">
+                    <div class="room-image" style="background-image: url('https://images.unsplash.com/photo-1596178065887-1198b6148b2b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');"></div>
+                    <div class="room-details">
+                        <h3>Presidential Suite</h3>
+                        <p class="room-description">Ultimate luxury with panoramic views</p>
+                        <div class="room-features">
+                            <span><i class="fas fa-bed"></i> 2 King Beds</span>
+                            <span><i class="fas fa-users"></i> 4 Guests</span>
+                            <span><i class="fas fa-ruler-combined"></i> 120 m²</span>
+                        </div>
+                        <div class="room-price">
+                            <span class="price">Rs 1800</span>
+                            <span class="per-night">/ night</span>
+                            <a href="#booking" class="btn btn-primary scroll-to-booking">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-controls">
+                <button class="carousel-prev"><i class="fas fa-chevron-left"></i></button>
+                <button class="carousel-next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <section class="amenities" id="amenities">
+        <div class="container">
+            <h2 class="section-title">World-Class Amenities</h2>
+            <p class="section-subtitle">Experience unparalleled comfort and service</p>
+            <div class="amenities-grid">
+                <div class="amenity-card">
+                    <div class="amenity-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Gourmet Dining</h3>
+                    <p>Michelin-starred restaurants with world-renowned chefs</p>
+                </div>
+                <div class="amenity-card">
+                    <div class="amenity-icon">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <h3>Luxury Spa</h3>
+                    <p>Rejuvenating treatments in our award-winning spa</p>
+                </div>
+                <div class="amenity-card">
+                    <div class="amenity-icon">
+                        <i class="fas fa-swimming-pool"></i>
+                    </div>
+                    <h3>Infinity Pool</h3>
+                    <p>Stunning infinity pools with breathtaking views</p>
+                </div>
+                <div class="amenity-card">
+                    <div class="amenity-icon">
+                        <i class="fas fa-concierge-bell"></i>
+                    </div>
+                    <h3>24/7 Concierge</h3>
+                    <p>Personalized service available around the clock</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Guest Experiences</h2>
+            <p class="section-subtitle">What our guests say about us</p>
+            <div class="testimonial-slider">
+                <div class="testimonial active">
+                    <div class="testimonial-content">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="testimonial-text">"The most incredible hotel experience I've ever had. The attention to detail was impeccable and the staff went above and beyond to make our stay special."</p>
+                        <div class="testimonial-author">
+                            <div class="author-image" style="background-image: url('https://randomuser.me/api/portraits/women/43.jpg');"></div>
+                            <div class="author-info">
+                                <h4>Sarah Johnson</h4>
+                                <p>New York, USA</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="testimonial-text">"From the moment we arrived, we were treated like royalty. The room was stunning with panoramic views that took our breath away every morning."</p>
+                        <div class="testimonial-author">
+                            <div class="author-image" style="background-image: url('https://randomuser.me/api/portraits/men/32.jpg');"></div>
+                            <div class="author-info">
+                                <h4>Michael Chen</h4>
+                                <p>London, UK</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <div class="quote-icon">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="testimonial-text">"The perfect blend of luxury and comfort. We've stayed at many 5-star hotels, but this one stands out for its exceptional service and beautiful design."</p>
+                        <div class="testimonial-author">
+                            <div class="author-image" style="background-image: url('https://randomuser.me/api/portraits/women/65.jpg');"></div>
+                            <div class="author-info">
+                                <h4>Emma Rodriguez</h4>
+                                <p>Barcelona, Spain</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-controls">
+                <button class="testimonial-prev"><i class="fas fa-chevron-left"></i></button>
+                <div class="testimonial-dots">
+                    <span class="dot active"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+                <button class="testimonial-next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2 class="section-title">Contact Us</h2>
+                    <p class="contact-text">Have questions or ready to book your stay? Our team is available 24/7 to assist you.</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span> 6202805409</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>myfamilytrip@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>123 Luxury Avenue, Suite 100, Miami, FL 33139</span>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <input type="text" id="contactName" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" id="contactEmail" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="contactSubject" name="subject" placeholder="Subject">
+                        </div>
+                        <div class="form-group">
+                            <textarea id="contactMessage" name="message" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="logo">
+                        <span>Family</span>Trip
+                    </div>
+                    <p>Experience the pinnacle of hospitality in the world's most beautiful destinations.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#destinations">Destinations</a></li>
+                        <li><a href="#rooms">Rooms</a></li>
+                        <li><a href="#amenities">Amenities</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Narayanawanam Road, chittur, A.P</p>
+                    <p><i class="fas fa-phone"></i> 8340772725</p>
+                    <p><i class="fas fa-envelope"></i> myfamilytrip@gmail.com</p>
+                </div>
+                <div class="footer-newsletter">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe for exclusive offers and updates</p>
+                    <form id="newsletterForm">
+                        <input type="email" placeholder="Your Email" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 FamilyTrip. All rights reserved.</p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal" id="bookingModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <h2>Booking Confirmation</h2>
+                <p id="modalMessage">Your booking has been successfully submitted!</p>
+                <div class="modal-buttons">
+                    <button class="btn btn-primary" id="closeModalBtn">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="hotel.js"></script>
+</body>
+</html>

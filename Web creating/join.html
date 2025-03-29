@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Join Us - Family Trip</title>
+  <link rel="stylesheet" href="stm.css">
+
+  <style>
+    /* Body Background */
+    body.join-body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    /* Transparent Form Container */
+    .join-container {
+      background: rgba(255, 255, 255, 0.3); /* Transparent white */
+      border: 2px solid rgba(255, 255, 255, 0.6); /* Slight border for contrast */
+      backdrop-filter: blur(10px); /* Frosted glass effect */
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      width: 320px;
+      text-align: center;
+    }
+
+    /* Form Title */
+    .join-container h2 {
+      margin-bottom: 20px;
+      color: #370e1a; /* White text for visibility */
+    }
+
+    /* Form Structure */
+    .join-form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Labels */
+    .join-form label {
+      margin-bottom: 5px;
+      text-align: left;
+      font-weight: bold;
+      color: 
+      #19181a; /* White text for readability */
+    }
+
+    /* Input Fields */
+    .join-form input {
+      margin-bottom: 15px;
+      padding: 10px;
+      border: 1px solid rgb(56 27 27 / 60%);
+      border-radius: 8px;
+      font-size: 14px;
+      background: rgba(255, 255, 255, 0.2); /* Transparent input field */
+      color: #8e5364;
+    }
+
+    /* Input Placeholder Text */
+    .join-form input::placeholder {
+      color: rgba(74, 15, 134, 0.7);
+    }
+
+    /* Button */
+    .join-form button {
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      background-color: #28a745;
+      color: #ffffff;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    /* Button Hover Effect */
+    .join-form button:hover {
+      background-color: #218838;
+    }
+
+    /* Success Message */
+    #successMessage {
+      font-weight: bold;
+      font-size: 16px;
+      color: #fff;
+    }
+  </style>
+</head>
+<body class="join-body">
+
+  <div class="join-container">
+    <h2>Join Family Trip</h2>
+
+    <form id="signupForm" class="join-form">
+      <label for="fullname">Full Name</label>
+      <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required />
+
+      <label for="email">Gmail</label>
+      <input type="email" id="email" name="email" placeholder="Enter your Gmail" required />
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="Enter your password" required />
+
+      <button type="button" onclick="sendOTP()">Submit</button>
+    </form>
+
+    <!-- OTP Verification -->
+    <form id="otpForm" class="join-form" style="display: none;">
+      <label for="otp">Enter OTP</label>
+      <input type="text" id="otp" name="otp" placeholder="Enter OTP" required />
+
+      <button type="button" onclick="verifyOTP()">Verify OTP</button>
+    </form>
+
+    <p id="successMessage" style="display: none;">Registration Successful!</p>
+  </div>
+
+  <script>
+    let userName = "";
+
+    function sendOTP() {
+      const name = document.getElementById('fullname').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value.trim();
+
+      if (!name || !email || !password) {
+        alert('Please fill out all fields.');
+        return;
+      }
+
+      userName = name; // Save the name for later use
+      alert("OTP sent to your email (simulate 1234)");
+      document.getElementById("signupForm").style.display = "none";
+      document.getElementById("otpForm").style.display = "block";
+    }
+
+    function verifyOTP() {
+      const otp = document.getElementById('otp').value.trim();
+      if (otp === "1234") {
+        // Redirect to the welcome page with user's name in the URL
+               window.location.href = `welcome.html?name=${encodeURIComponent(userName)}`;
+      } else {
+        alert("Incorrect OTP. Please try again.");
+      }
+    }
+  </script>
+
+</body>
+</html>

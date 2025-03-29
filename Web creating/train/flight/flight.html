@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyVoyage | Book Flights with Elegance</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="flight.css">
+</head>
+<body>
+    <!-- Animated Background Elements -->
+    <div class="bg-elements">
+        <div class="circle circle-1"></div>
+        <div class="circle circle-2"></div>
+        <div class="circle circle-3"></div>
+        <div class="cloud cloud-1"></div>
+        <div class="cloud cloud-2"></div>
+        <div class="cloud cloud-3"></div>
+        <div class="plane-animation">
+            <i class="fas fa-plane"></i>
+        </div>
+    </div>
+
+    <!-- Floating Particles -->
+    <div class="particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="glass-nav">
+        <div class="nav-container">
+            <div class="logo" id="logo">
+                <i class="fas fa-paper-plane"></i>
+                <span>FamilyTrip</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#" class="nav-link active" data-text="Home">Home</a></li>
+                <li><a href="#" class="nav-link" data-text="Flights">Flights</a></li>
+                <li><a href="#" class="nav-link" data-text="Destinations">Destinations</a></li>
+                <li><a href="#" class="nav-link" data-text="Deals">Deals</a></li>
+                <li><a href="#" class="nav-link" data-text="Contact">Contact</a></li>
+            </ul>
+
+            
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="title-word title-word-1">Discover</span>
+                <span class="title-word title-word-2">The</span>
+                <span class="title-word title-word-3">World</span>
+            </h1>
+            <p class="hero-subtitle">Find and book your perfect flight to any destination around the globe</p>
+            <button class="btn btn-explore pulse">Explore Destinations <i class="fas fa-arrow-right"></i></button>
+        </div>
+        <div class="hero-scroll">
+            <span>Scroll Down</span>
+            <div class="scroll-icon"></div>
+        </div>
+    </section>
+
+    <!-- Booking Card -->
+    <div class="booking-card-container">
+        <div class="booking-card glass-card">
+            <div class="booking-tabs">
+                <button class="tab-btn active" data-tab="round-trip"><i class="fas fa-exchange-alt"></i> Round Trip</button>
+                <button class="tab-btn" data-tab="one-way"><i class="fas fa-arrow-right"></i> One Way</button>
+                <button class="tab-btn" data-tab="multi-city"><i class="fas fa-map-marked-alt"></i> Multi-City</button>
+            </div>
+
+            <form class="booking-form">
+                <div class="form-group location-group">
+                    <div class="input-field">
+                        <label for="from"><i class="fas fa-plane-departure"></i> From</label>
+                        <input type="text" id="from" placeholder="City or Airport" autocomplete="off">
+                        <div class="suggestions"></div>
+                    </div>
+                    <button type="button" class="swap-btn" id="swap-locations">
+                        <i class="fas fa-random"></i>
+                    </button>
+                    <div class="input-field">
+                        <label for="to"><i class="fas fa-plane-arrival"></i> To</label>
+                        <input type="text" id="to" placeholder="City or Airport" autocomplete="off">
+                        <div class="suggestions"></div>
+                    </div>
+                </div>
+
+                <div class="form-group date-group">
+                    <div class="input-field">
+                        <label for="departure"><i class="far fa-calendar-alt"></i> Departure</label>
+                        <input type="date" id="departure">
+                    </div>
+                    <div class="input-field return-field">
+                        <label for="return"><i class="far fa-calendar-alt"></i> Return</label>
+                        <input type="date" id="return">
+                    </div>
+                </div>
+
+                <div class="form-group passenger-group">
+                    <div class="input-field">
+                        <label for="passengers"><i class="fas fa-users"></i> Passengers</label>
+                        <div class="passenger-selector">
+                            <div class="passenger-type">
+                                <span>Adults</span>
+                                <div class="counter">
+                                    <button type="button" class="counter-btn minus"><i class="fas fa-minus"></i></button>
+                                    <span class="count">1</span>
+                                    <button type="button" class="counter-btn plus"><i class="fas fa-plus"></i></button>
+                                </div>
+                            </div>
+                            <div class="passenger-type">
+                                <span>Children</span>
+                                <div class="counter">
+                                    <button type="button" class="counter-btn minus"><i class="fas fa-minus"></i></button>
+                                    <span class="count">0</span>
+                                    <button type="button" class="counter-btn plus"><i class="fas fa-plus"></i></button>
+                                </div>
+                            </div>
+                            <div class="passenger-type">
+                                <span>Infants</span>
+                                <div class="counter">
+                                    <button type="button" class="counter-btn minus"><i class="fas fa-minus"></i></button>
+                                    <span class="count">0</span>
+                                    <button type="button" class="counter-btn plus"><i class="fas fa-plus"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="input-field">
+                        <label for="class"><i class="fas fa-chair"></i> Class</label>
+                        <select id="class">
+                            <option value="economy">Economy</option>
+                            <option value="premium">Premium Economy</option>
+                            <option value="business">Business</option>
+                            <option value="first">First Class</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-search">
+                    <i class="fas fa-search"></i> Search Flights
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="section-header">
+            <h2 class="section-title">Why Fly With Us</h2>
+            <p class="section-subtitle">Experience travel reimagined with SkyVoyage</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-globe-americas"></i>
+                </div>
+                <h3>Global Network</h3>
+                <p>Access to over 10,000 destinations across 200 countries with our extensive airline partnerships.</p>
+                <div class="feature-wave"></div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-medal"></i>
+                </div>
+                <h3>Best Prices</h3>
+                <p>Our price match guarantee ensures you always get the best deal available anywhere.</p>
+                <div class="feature-wave"></div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-headset"></i>
+                </div>
+                <h3>24/7 Support</h3>
+                <p>Round-the-clock assistance from our dedicated travel experts whenever you need help.</p>
+                <div class="feature-wave"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destinations Section -->
+    <section class="destinations">
+        <div class="section-header">
+            <h2 class="section-title">Popular Destinations</h2>
+            <p class="section-subtitle">Explore our most sought-after travel spots</p>
+        </div>
+        <div class="destinations-slider">
+            <div class="slider-container">
+                <div class="destination-slide active" data-destination="paris">
+                    <div class="slide-content">
+                        <h3>New Delhi, Delhi</h3>
+                        <p>The City of Light awaits with its romantic ambiance and iconic landmarks.</p>
+                        <div class="price">From Rs 3500</div>
+                        <button class="btn btn-slide">Book Now</button>
+                    </div>
+                </div>
+                <div class="destination-slide" data-destination="tokyo">
+                    <div class="slide-content">
+                        <h3>Mumbai, Maharastra</h3>
+                        <p>Experience the perfect blend of tradition and cutting-edge technology.</p>
+                        <div class="price">From Rs 3000</div>
+                        <button class="btn btn-slide">Book Now</button>
+                    </div>
+                </div>
+                <div class="destination-slide" data-destination="new-york">
+                    <div class="slide-content">
+                        <h3>Goa, India</h3>
+                        <p>The city that never sleeps offers endless possibilities for adventure.</p>
+                        <div class="price">From Rs 2500</div>
+                        <button class="btn btn-slide">Book Now</button>
+                    </div>
+                </div>
+                <div class="destination-slide" data-destination="bali">
+                    <div class="slide-content">
+                        <h3>Patna, Bihar</h3>
+                        <p>Tropical paradise with lush jungles, pristine beaches, and rich culture.</p>
+                        <div class="price">From Rs 3200</div>
+                        <button class="btn btn-slide">Book Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="slider-controls">
+                <button class="slider-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+                <div class="slider-dots"></div>
+                <button class="slider-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="section-header">
+            <h2 class="section-title">Traveler Stories</h2>
+            <p class="section-subtitle">What our customers say about their experiences</p>
+        </div>
+        <div class="testimonial-cards">
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                    <p>SkyVoyage made my trip to Japan seamless. The booking process was effortless, and their customer service was exceptional when I needed to make changes.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Sarah Johnson">
+                        </div>
+                        <div class="author-info">
+                            <h4>Sarah Johnson</h4>
+                            <span>Gorkhpur, Utter-pradesh</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                    <p>I've booked multiple flights through SkyVoyage and they consistently have the best prices. Their mobile app is also incredibly user-friendly.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Michael Chen">
+                        </div>
+                        <div class="author-info">
+                            <h4>Michael Chen</h4>
+                            <span>London, UK</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                    <p>The multi-city booking feature saved me hours of planning for my European tour. Highly recommend SkyVoyage for complex itineraries!</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emma Rodriguez">
+                        </div>
+                        <div class="author-info">
+                            <h4>Emma Rodriguez</h4>
+                            <span>Bhopal, M.P</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="newsletter-container">
+            <div class="newsletter-content">
+                <h2>Ready for Your Next Adventure?</h2>
+                <p>Subscribe to our newsletter for exclusive deals, travel tips, and destination inspiration.</p>
+                <form class="newsletter-form">
+                    <div class="input-group">
+                        <input type="email" placeholder="Your email address">
+                        <button type="submit" class="btn btn-subscribe">Subscribe</button>
+                    </div>
+                </form>
+            </div>
+            <div class="newsletter-image">
+                <img src="https://images.unsplash.com/photo-1483728642387-6c3bdd6c93e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Travel Adventure">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="logo">
+                    <i class="fas fa-paper-plane"></i>
+                    <span>SkyVoyage</span>
+                </div>
+                <p>Making travel dreams a reality with seamless booking experiences and unbeatable prices.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <div class="link-group">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="link-group">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Safety Center</a></li>
+                        <li><a href="#">Community Guidelines</a></li>
+                        <li><a href="#">Cancellation Options</a></li>
+                    </ul>
+                </div>
+                <div class="link-group">
+                    <h3>Contact</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Narayanawanam Road, chittur,A.P</li>
+                        <li><i class="fas fa-phone"></i> 8340772725</li>
+                        <li><i class="fas fa-envelope"></i> myfamilytrip@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 FamilyTrip. All rights reserved.</p>
+            <div class="legal-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Cookies Settings</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="flight.js"></script>
+</body>
+</html>

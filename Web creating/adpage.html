@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FamilyTrip.com | Your Complete Travel Solution</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Global Styles */
+    :root {
+      --primary: #2a9d8f;
+      --secondary: #264653;
+      --accent: #e9c46a;
+      --light: #f8f9fa;
+      --dark: #212529;
+      --success: #28a745;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    body {
+      background-color: #f5f5f5;
+      color: var(--dark);
+      line-height: 1.6;
+    }
+    
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    .btn {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .btn:hover {
+      background: #21867a;
+      transform: translateY(-3px);
+      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    }
+    
+    .btn-accent {
+      background: var(--accent);
+      color: var(--dark);
+    }
+    
+    .btn-accent:hover {
+      background: #e0b657;
+    }
+    
+    section {
+      padding: 80px 0;
+    }
+    
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      color: var(--secondary);
+      text-align: center;
+      position: relative;
+    }
+    
+    h2::after {
+      content: '';
+      display: block;
+      width: 80px;
+      height: 4px;
+      background: var(--accent);
+      margin: 15px auto 0;
+    }
+    
+    /* Header Styles */
+    header {
+      background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1506929562872-bb421503ef21?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      transition: all 0.3s ease;
+      background: rgba(42, 157, 143, 0.9);
+    }
+    
+    .navbar.scrolled {
+      background: rgba(38, 70, 83, 0.95);
+      padding: 15px 0;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+    
+    .logo h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-left: 10px;
+    }
+    
+    .logo i {
+      font-size: 2rem;
+      color: var(--accent);
+    }
+    
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+    
+    nav ul li {
+      margin-left: 30px;
+    }
+    
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    
+    nav ul li a:hover {
+      color: var(--accent);
+    }
+    
+    nav ul li a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      bottom: -5px;
+      left: 0;
+      transition: width 0.3s ease;
+    }
+    
+    nav ul li a:hover::after {
+      width: 100%;
+    }
+    
+    .hero-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+    }
+    
+    .hero-content h1 {
+      font-size: 3.5rem;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    
+    .hero-content p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin-bottom: 40px;
+    }
+    
+    .hero-btns {
+      display: flex;
+      gap: 20px;
+    }
+    
+    /* Services Section */
+    .services {
+      background: white;
+    }
+    
+    .services p.subtitle {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 50px;
+      color: #666;
+    }
+    
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 50px;
+    }
+    
+    .card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      text-align: center;
+      padding: 30px 20px;
+      border: 1px solid #eee;
+    }
+    
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    }
+    
+    .card img {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+      margin-bottom: 20px;
+    }
+    
+    .card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      color: var(--secondary);
+    }
+    
+    .card p {
+      color: #666;
+      margin-bottom: 20px;
+    }
+    
+    /* About Section */
+    .about {
+      background: #f9f9f9;
+    }
+    
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+      align-items: center;
+    }
+    
+    .about-text {
+      padding-right: 30px;
+    }
+    
+    .about-text p {
+      margin-bottom: 20px;
+    }
+    
+    .about-text ul {
+      margin: 20px 0;
+      padding-left: 20px;
+    }
+    
+    .about-text ul li {
+      margin-bottom: 10px;
+      list-style-type: none;
+      position: relative;
+      padding-left: 25px;
+    }
+    
+    .about-text ul li::before {
+      content: '•';
+      color: var(--primary);
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+    }
+    
+    .about-image {
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .about-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    /* Testimonials */
+    .testimonials {
+      background: white;
+    }
+    
+    .testimonial-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 50px;
+    }
+    
+    .testimonial {
+      background: #f9f9f9;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+    
+    .testimonial-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    
+    .testimonial-img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-right: 15px;
+    }
+    
+    .testimonial-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    
+    .testimonial-info h4 {
+      margin-bottom: 5px;
+    }
+    
+    .testimonial-info p {
+      color: #666;
+      font-size: 0.9rem;
+    }
+    
+    .testimonial-text {
+      font-style: italic;
+      color: #555;
+    }
+    
+    .rating {
+      color: var(--accent);
+      margin-top: 15px;
+    }
+    
+    /* Newsletter */
+    .newsletter {
+      background: var(--secondary);
+      color: white;
+      text-align: center;
+      padding: 60px 20px;
+    }
+    
+    .newsletter h2 {
+      color: white;
+    }
+    
+    .newsletter p {
+      max-width: 600px;
+      margin: 0 auto 30px;
+    }
+    
+    .newsletter-form {
+      display: flex;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    
+    .newsletter-form input {
+      flex: 1;
+      padding: 15px;
+      border: none;
+      border-radius: 50px 0 0 50px;
+      font-size: 16px;
+    }
+    
+    .newsletter-form button {
+      padding: 15px 30px;
+      border: none;
+      background: var(--accent);
+      color: var(--dark);
+      font-weight: 600;
+      border-radius: 0 50px 50px 0;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    
+    .newsletter-form button:hover {
+      background: #e0b657;
+    }
+    
+    /* Footer */
+    footer {
+      background: var(--dark);
+      color: white;
+      padding: 60px 0 20px;
+    }
+    
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+    
+    .footer-column h3 {
+      color: white;
+      margin-bottom: 20px;
+      font-size: 1.2rem;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    
+    .footer-column h3::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 40px;
+      height: 2px;
+      background: var(--accent);
+    }
+    
+    .footer-column p {
+      margin-bottom: 15px;
+      color: #bbb;
+    }
+    
+    .footer-links {
+      list-style: none;
+    }
+    
+    .footer-links li {
+      margin-bottom: 10px;
+    }
+    
+    .footer-links a {
+      color: #bbb;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .footer-links a:hover {
+      color: var(--accent);
+      padding-left: 5px;
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      color: white;
+      transition: all 0.3s ease;
+    }
+    
+    .social-links a:hover {
+      background: var(--accent);
+      color: var(--dark);
+      transform: translateY(-3px);
+    }
+    
+    .footer-bottom {
+      text-align: center;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      color: #bbb;
+      font-size: 0.9rem;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 992px) {
+      .about-content {
+        grid-template-columns: 1fr;
+      }
+      
+      .about-text {
+        padding-right: 0;
+      }
+      
+      .hero-content h1 {
+        font-size: 2.8rem;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        padding: 15px 0;
+        background: rgba(38, 70, 83, 0.95);
+      }
+      
+      nav ul {
+        margin-top: 15px;
+      }
+      
+      nav ul li {
+        margin: 0 10px;
+      }
+      
+      .hero-content h1 {
+        font-size: 2.2rem;
+      }
+      
+      .hero-btns {
+        flex-direction: column;
+        gap: 15px;
+      }
+      
+      .newsletter-form {
+        flex-direction: column;
+      }
+      
+      .newsletter-form input {
+        border-radius: 50px;
+        margin-bottom: 10px;
+      }
+      
+      .newsletter-form button {
+        border-radius: 50px;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .hero-content h1 {
+        font-size: 1.8rem;
+      }
+      
+      h2 {
+        font-size: 2rem;
+      }
+    }
+#hom{
+  color: #cad6ec;
+  font-size: 4rem;
+  font-weight: bold;
+  overflow: hidden;
+ /* border-right: 6px solid orange; /* Cursor effect */
+  white-space: nowrap;
+  margin: 0 auto;
+  width: fit-content;
+  animation: typing 5s steps(40, end) forwards, blink-caret 0.75s step-end infinite;
+}
+
+/* Typing effect */
+@keyframes typing {
+  from { width: 0; }
+  to { width: 50%; }
+}
+
+/* Blinking cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  25% { border-color: rgb(219, 228, 134); }
+}
+  </style>
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <div class="navbar">
+      <div class="logo">
+        <i class="fas fa-route"></i>
+        <h1>FamilyTrip</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="contect/contect.html">Contact</a></li>
+          <li><a href="join.html" class="btn btn-accent">SIGN IN</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="hero-content">
+      <h1 id="hom">Plan Your Perfect Family Get away</h1>
+      <p>Book flights, hotels, trains, and meals all in one place for a hassle-free vacation experience</p>
+      <section id="home">
+        <a href="#services" class="btn">Explore Services</a>
+        <a href="join.html" class="btn btn-accent">Get Started</a>
+      </section>
+      <div class="hero-btns">
+      </div>
+    </div>
+  </header>
+
+  <!-- Services Section -->
+  <section class="services" id="services">
+    <div class="container">
+      <h2>Our Services</h2>
+      <p class="subtitle">Everything you need for a perfect family vacation in one convenient platform</p>
+      
+      <div class="card-container">
+        <a href="hotel/hotel.html" class="card">
+          <img src="https://cdn-icons-png.flaticon.com/512/167/167707.png" alt="Hotel Booking">
+          <h3>Hotel Booking</h3>
+          <p>Find the perfect accommodation for your family with our wide selection of hotels and resorts</p>
+          <span class="btn">Book Now</span>
+        </a>
+        
+        <a href="food2/food.html" class="card">
+          <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" alt="Food Delivery">
+          <h3>Food Delivery</h3>
+          <p>Order delicious meals from local restaurants directly to your hotel room</p>
+          <span class="btn">Order Food</span>
+        </a>
+        
+        <a href="train2/train.html" class="card">
+          <img src="train.png" alt="Train Booking">
+          <h3>Train Booking</h3>
+          <p>Secure comfortable train tickets for your family with our easy booking system</p>
+          <span class="btn">Book Tickets</span>
+        </a>
+        
+        <a href="train/flight/flight.html" class="card">
+          <img src="https://cdn-icons-png.flaticon.com/512/201/201623.png" alt="Flight Booking">
+          <h3>Flight Booking</h3>
+          <p>Find the best flight deals for your family vacation with our comprehensive search</p>
+          <span class="btn">Find Flights</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="container">
+      <h2>About FamilyTrip</h2>
+      
+      <div class="about-content">
+        <div class="about-text">
+          <p>
+            Welcome to <strong>FamilyTrip.com</strong>, your one-stop solution for all travel and hospitality needs. 
+            We understand that planning a family vacation can be stressful, which is why we've created 
+            a platform that simplifies every aspect of your journey.
+          </p>
+          
+          <p>
+            From booking flights and hotels to arranging local transportation and food delivery, 
+            we've got you covered. Our mission is to make family travel as seamless and enjoyable 
+            as possible.
+          </p>
+          
+          <h3>What We Offer:</h3>
+          <ul>
+            <li><strong>Comprehensive Travel Planning:</strong> Book everything in one place</li>
+            <li><strong>Family-Friendly Options:</strong> Special deals for families with children</li>
+            <li><strong>24/7 Support:</strong> Assistance whenever you need it</li>
+            <li><strong>Best Price Guarantee:</strong> We'll match any lower price you find</li>
+          </ul>
+          
+          <h3>Why Choose Us?</h3>
+          <ul>
+            <li>✔ Easy-to-use platform for all your travel needs</li>
+            <li>✔ Verified reviews from other families</li>
+            <li>✔ Flexible cancellation policies</li>
+            <li>✔ Exclusive deals for members</li>
+          </ul>
+        </div>
+        
+        <div class="about-image">
+          <img src="https://images.unsplash.com/photo-1501555088652-021faa106b9b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Happy family traveling">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials">
+    <div class="container">
+      <h2>What Families Say</h2>
+      <p class="subtitle">Hear from families who've enjoyed hassle-free vacations with us</p>
+      
+      <div class="testimonial-container">
+        <div class="testimonial">
+          <div class="testimonial-header">
+            <div class="testimonial-img">
+              <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Sarah Johnson">
+            </div>
+            <div class="testimonial-info">
+              <h4>Sarah Johnson</h4>
+              <p>Family of 4, Chicago</p>
+            </div>
+          </div>
+          <div class="testimonial-text">
+            "FamilyTrip made our vacation planning so easy! We booked flights, hotels, and even 
+            train tickets all in one place. The food delivery service was a lifesaver with our 
+            picky eaters!"
+          </div>
+          <div class="rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+        </div>
+        
+        <div class="testimonial">
+          <div class="testimonial-header">
+            <div class="testimonial-img">
+              <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen">
+            </div>
+            <div class="testimonial-info">
+              <h4>Michael Chen</h4>
+              <p>Family of 5, New York</p>
+            </div>
+          </div>
+          <div class="testimonial-text">
+            "As a father of three, I appreciate how FamilyTrip understands family needs. The hotel 
+            recommendations were perfect for kids, and the food options had something for everyone."
+          </div>
+          <div class="rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+          </div>
+        </div>
+        
+        <div class="testimonial">
+          <div class="testimonial-header">
+            <div class="testimonial-img">
+              <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Emily Rodriguez">
+            </div>
+            <div class="testimonial-info">
+              <h4>Emily Rodriguez</h4>
+              <p>Family of 3, Miami</p>
+            </div>
+          </div>
+          <div class="testimonial-text">
+            "The all-in-one platform saved us so much time! We could manage our entire trip without 
+            switching between multiple apps. The customer service was exceptional when we needed to 
+            make last-minute changes."
+          </div>
+          <div class="rating">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section class="newsletter">
+    <div class="container">
+      <h2>Get Travel Tips & Deals</h2>
+      <p>Subscribe to our newsletter for family travel tips, exclusive deals, and destination inspiration</p>
+      
+      <form class="newsletter-form">
+        <input type="email" placeholder="Enter your email address" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer id="contact">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>About FamilyTrip</h3>
+          <p>Your complete solution for family travel planning. We make vacation planning easy and enjoyable for families of all sizes.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-pinterest"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="join.html">Sign In</a></li>
+            <li><a href="#">Blog</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Services</h3>
+          <ul class="footer-links">
+            <li><a href="train/flight/room/room.html">Hotel Booking</a></li>
+            <li><a href="food2/food.html">Food Delivery</a></li>
+            <li><a href="train/flight/train.html">Train Tickets</a></li>
+            <li><a href="train/flight/flight.html">Flight Tickets</a></li>
+            <li><a href="#">Travel Insurance</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-column">
+          <h3>Contact Us</h3>
+          <p><i class="fas fa-map-marker-alt"></i> Narayanawanam Road, chittur, A.P </p>
+          <p><i class="fas fa-phone"></i> 8340772725</p>
+          <p><i class="fas fa-envelope"></i> myfamilytrip@example.com</p>
+          <p><i class="fas fa-clock"></i> 24/7 Customer Support</p>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 FamilyTrip.com. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Sticky Navbar
+    window.addEventListener('scroll', function() {
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        
+        const targetElement = document.querySelector(targetId);
+        if (targetElement) {
+          window.scrollTo({
+            top: targetElement.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+    
+    // Newsletter form submission
+    const newsletterForm = document.querySelector('.newsletter-form');
+    if (newsletterForm) {
+      newsletterForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const emailInput = this.querySelector('input[type="email"]');
+        alert(`Thank you for subscribing with ${emailInput.value}! You'll receive our next newsletter soon.`);
+        emailInput.value = '';
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RailEase - Beautiful Train Travel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="train.css">
+</head>
+<body>
+    <div class="loading-screen">
+        <div class="train-animation">
+            <div class="track"></div>
+            <div class="train">
+                <div class="engine">
+                    <div class="window"></div>
+                    <div class="light"></div>
+                </div>
+                <div class="coach"></div>
+                <div class="coach"></div>
+            </div>
+        </div>
+        <p>Loading your journey...</p>
+    </div>
+
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">
+                <i class="fas fa-train"></i>
+                <span>FamilyTrip</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#booking">Book Tickets</a></li>
+                <li><a href="#trains">Trains</a></li>
+                <li><a href="#offers">Offers</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="auth-buttons">
+                <!-- <button class="btn login-btn">Login</button>
+                <button class="btn signup-btn">Sign Up</button> -->
+            </div>
+            <div class="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="hero-title">Journey Through <span>Beautiful Landscapes</span></h1>
+                <p class="hero-subtitle">Book your train tickets with ease and enjoy the scenic routes</p>
+                <button class="btn hero-btn pulse">Book Now <i class="fas fa-arrow-right"></i></button>
+            </div>
+            <div class="hero-image">
+                <div class="train-scene">
+                    <div class="mountain"></div>
+                    <div class="mountain"></div>
+                    <div class="train-moving">
+                        <div class="engine">
+                            <div class="window"></div>
+                            <div class="light"></div>
+                        </div>
+                        <div class="coach"></div>
+                        <div class="coach"></div>
+                        <div class="coach"></div>
+                    </div>
+                    <div class="track"></div>
+                    <div class="sun"></div>
+                    <div class="cloud cloud1"></div>
+                    <div class="cloud cloud2"></div>
+                    <div class="cloud cloud3"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="booking" class="booking-section">
+            <div class="booking-container">
+                <h2 class="section-title">Plan Your Journey</h2>
+                <div class="booking-card">
+                    <div class="tabs">
+                        <button class="tab active" data-tab="one-way">One Way</button>
+                        <button class="tab" data-tab="round-trip">Round Trip</button>
+                    </div>
+                    <form id="booking-form" class="booking-form">
+                        <div class="form-group">
+                            <label for="from"><i class="fas fa-map-marker-alt"></i> From</label>
+                            <input type="text" id="from" placeholder="Departure city" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="to"><i class="fas fa-map-marker-alt"></i> To</label>
+                            <input type="text" id="to" placeholder="Destination city" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="departure"><i class="far fa-calendar-alt"></i> Departure</label>
+                            <input type="date" id="departure" required>
+                        </div>
+                        <div class="form-group return-date-group" style="display: none;">
+                            <label for="return"><i class="far fa-calendar-alt"></i> Return</label>
+                            <input type="date" id="return">
+                        </div>
+                        <div class="form-group">
+                            <label for="passengers"><i class="fas fa-users"></i> Passengers</label>
+                            <div class="passenger-selector">
+                                <button type="button" class="passenger-btn minus">-</button>
+                                <input type="number" id="passengers" value="1" min="1" max="10" readonly>
+                                <button type="button" class="passenger-btn plus">+</button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="class"><i class="fas fa-chair"></i> Class</label>
+                            <select id="class">
+                                <option value="economy">Economy</option>
+                                <option value="business">Business</option>
+                                <option value="first">First Class</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn search-btn">Search Trains <i class="fas fa-search"></i></button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section id="trains" class="trains-section">
+            <div class="container">
+                <h2 class="section-title">Popular Trains</h2>
+                <p class="section-subtitle">Experience comfort and speed with our premium services</p>
+                
+                <div class="trains-grid">
+                    <div class="train-card">
+                        <div class="train-image" style="background-image: url('https://media.istockphoto.com/id/1184398225/photo/growing-asian-cities-night-view-of-pune-city-in-india-during-diwali-festival.webp?a=1&b=1&s=612x612&w=0&k=20&c=k93yvMsqSaJqsXhYISrQ2Unr5Ps-cS45ySgQLbAaeFA=');">
+                            <div class="train-number">TGV 6210</div>
+                        </div>
+                        <div class="train-info">
+                            <h3>Bengeluru to Chennai</h3>
+                            <div class="train-details">
+                                <div class="detail">
+                                    <i class="fas fa-clock"></i>
+                                    <span>2h 15m</span>
+                                </div>
+                                <div class="detail">
+                                    <!-- <i class="fas fa-euro-sign"></i> -->
+                                    <span>From Rs 1500</span>
+                                </div>
+                            </div>
+                            <button class="btn book-btn">View Schedule</button>
+                        </div>
+                    </div>
+                    
+                    <div class="train-card">
+                        <div class="train-image" style="background-image: url('https://images.unsplash.com/photo-1587474260584-136574528ed5?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZGVsaGl8ZW58MHx8MHx8fDA%3D');">
+                            <div class="train-number">ICE 987</div>
+                        </div>
+                        <div class="train-info">
+                            <h3>Mumbai to Delhi</h3>
+                            <div class="train-details">
+                                <div class="detail">
+                                    <!-- <i class="fas fa-clock"></i> -->
+                                    <span>4h 30m</span>
+                                </div>
+                                <div class="detail">
+                                    <!-- <i class="fas fa-euro-sign"></i> -->
+                                    <span>From Rs 1230</span>
+                                </div>
+                            </div>
+                            <button class="btn book-btn">View Schedule</button>
+                        </div>
+                    </div>
+                    
+                    <div class="train-card">
+                        <div class="train-image" style="background-image: url('https://images.unsplash.com/photo-1565992441121-4367c2967103?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+                            <div class="train-number">Shinkansen 5</div>
+                        </div>
+                        <div class="train-info">
+                            <h3>Patna to Kolkata</h3>
+                            <div class="train-details">
+                                <div class="detail">
+                                    <!-- <i class="fas fa-clock"></i> -->
+                                    <span>2h 30m</span>
+                                </div>
+                                <div class="detail">
+                                    <!-- <i class="fas fa-yen-sign"></i> -->
+                                    <span>From Rs 545</span>
+                                </div>
+                            </div>
+                            <button class="btn book-btn">View Schedule</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="offers" class="offers-section">
+            <div class="container">
+                <h2 class="section-title">Special Offers</h2>
+                <p class="section-subtitle">Save more on your next journey</p>
+                
+                <div class="offers-carousel">
+                    <div class="offer-card">
+                        <div class="offer-badge">30% OFF</div>
+                        <div class="offer-content">
+                            <h3>Summer Escape</h3>
+                            <p>Book your summer vacation tickets now and get 30% discount on selected routes.</p>
+                            <button class="btn offer-btn">Claim Offer</button>
+                        </div>
+                    </div>
+                    
+                    <div class="offer-card">
+                        <div class="offer-badge">2 FOR 1</div>
+                        <div class="offer-content">
+                            <h3>Weekend Getaway</h3>
+                            <p>Travel with a friend this weekend and pay for just one ticket!</p>
+                            <button class="btn offer-btn">Claim Offer</button>
+                        </div>
+                    </div>
+                    
+                    <div class="offer-card">
+                        <div class="offer-badge">15% OFF</div>
+                        <div class="offer-content">
+                            <h3>Early Bird</h3>
+                            <p>Book your tickets at least 30 days in advance and save 15%.</p>
+                            <button class="btn offer-btn">Claim Offer</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features-section">
+            <div class="container">
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h3>Fast Booking</h3>
+                        <p>Book your tickets in just a few clicks with our intuitive interface.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Secure Payments</h3>
+                        <p>Your transactions are protected with industry-standard security.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3>24/7 Support</h3>
+                        <p>Our customer service team is always ready to assist you.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Mobile Tickets</h3>
+                        <p>Receive your tickets on your phone - no need to print!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2 class="section-title">Contact Us</h2>
+                <p class="section-subtitle">We'd love to hear from you</p>
+                
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <p> 8340772725</p>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <p>myfamilytrip@gmail.com</p>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p> Narayanawanam Road, chittur, A.P</p>
+                        </div>
+                    </div>
+                    
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Subject">
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <i class="fas fa-train"></i>
+                <span>FamilyTrip</span>
+            </div>
+            <!-- <section style="display: ;">
+            <div class="footer-links">
+                <div class="link-group">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="link-group">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Safety</a></li>
+                        <li><a href="#">Cancellation</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div class="link-group">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Terms</a></li>
+                        <li><a href="#">Privacy</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section> -->
+            <div class="footer-social">
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 FamilyTrip. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div class="modal" id="login-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Login to Your Account</h2>
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" required>
+                </div>
+                <button type="submit" class="btn">Login</button>
+            </form>
+            <p class="modal-footer">Don't have an account? <a href="#" id="show-signup">Sign up</a></p>
+        </div>
+    </div>
+
+    <div class="modal" id="signup-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Create an Account</h2>
+            <form id="signup-form">
+                <div class="form-group">
+                    <label for="signup-name">Full Name</label>
+                    <input type="text" id="signup-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-email">Email</label>
+                    <input type="email" id="signup-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-password">Password</label>
+                    <input type="password" id="signup-password" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-confirm">Confirm Password</label>
+                    <input type="password" id="signup-confirm" required>
+                </div>
+                <button type="submit" class="btn">Sign Up</button>
+            </form>
+            <p class="modal-footer">Already have an account? <a href="#" id="show-login">Login</a></p>
+        </div>
+    </div>
+
+    <script src="train.js"></script>
+</body>
+</html>

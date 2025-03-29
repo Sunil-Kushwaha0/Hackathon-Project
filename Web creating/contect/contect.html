@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Get Help & Suggestions</title>
+    <link rel="stylesheet" href="contect.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <i class="fas fa-headset"></i>
+                    <h1>Help<span>Desk</span></h1>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                </ul>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>We're Here to Help!</h1>
+                <p>Have questions or suggestions? Reach out to us, and we'll get back to you as soon as possible.</p>
+                <a href="#contact" class="btn">Contact Us</a>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1587560699334-bea93391dcef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Customer Support">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <p>Fill out the form below, and we'll respond within 24 hours.</p>
+            
+            <form id="contactForm">
+                <div class="form-group">
+                    <input type="text" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <select id="subject" required>
+                        <option value="" disabled selected>Select Subject</option>
+                        <option value="support">Support Request</option>
+                        <option value="feedback">Feedback</option>
+                        <option value="suggestion">Suggestion</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How can I reach customer support?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>You can contact us via the form above, email us at <strong>support@helpdesk.com</strong>, or call us at <strong>+1 (123) 456-7890</strong>.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What are your working hours?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our support team is available Monday to Friday, from 9 AM to 6 PM (EST).</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Can I suggest a new feature?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Absolutely! We love feedback. Use the contact form and select "Suggestion" as the subject.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2>What Our Clients Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"The support team was incredibly helpful and resolved my issue within minutes!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User">
+                        <h4>Sarah Johnson</h4>
+                        <span>Marketing Director</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Fast response time and friendly service. Highly recommend!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User">
+                        <h4>Michael Chen</h4>
+                        <span>Business Owner</span>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"Great suggestions were implemented quickly. Very satisfied!"</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="User">
+                        <h4>Emily Rodriguez</h4>
+                        <span>Product Manager</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-headset"></i>
+                    <h3>Help<span>Desk</span></h3>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-envelope"></i>myfamilytrip@gamil.con</p>
+                    <p><i class="fas fa-phone"></i>8340772725, 7079831445</p>
+                    <p><i class="fas fa-map-marker-alt"></i>Narayanavam Road,Narayanavam,Puttur,Chittoor Dist,A.P 517583</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 HelpDesk. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="contect.js"></script>
+</body>
+</html>
